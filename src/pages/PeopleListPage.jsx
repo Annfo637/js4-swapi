@@ -5,7 +5,7 @@ export default function PeopleListPage() {
   const [peopleList, setPeopleList] = useState(null);
 
   function getPeopleList() {
-    const url = "https://swapi.dev/api/people";
+    const url = "https://swapi.dev/api/people/";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPeopleList(data.results));
@@ -18,6 +18,8 @@ export default function PeopleListPage() {
   return (
     <div>
       People List Page
+      <br />
+      <br />
       {peopleList &&
         peopleList.map((person) => {
           const id = person.url
